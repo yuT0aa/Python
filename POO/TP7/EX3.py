@@ -31,3 +31,18 @@ print(graph)
 #2. Afficher tous les voisins d'un sommet.
 print(graph["A"])
 
+#3. Déterminer si un chemin existe entre A et E.
+def dfs(graph, start, target, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+    if start == target:
+        return True
+    for neighbor in graph[start]:
+        if neighbor not in visited:
+            if dfs(graph, neighbor, target, visited):
+                return True
+    return False
+
+print(dfs(graph, "A", "E"))
+
