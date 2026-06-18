@@ -39,4 +39,4 @@ print(classement)
 
 # 3. Trouver le champion.
 champion = classement[0][0]
-print(champion) 
+print(champion)
