@@ -24,7 +24,7 @@ a. rechercher un étudiant ;
 b. afficher sa note ;
 c. afficher "Étudiant introuvable" sinon.
 """
-
+#Q1
 import pandas as pd
 import os
 
@@ -34,32 +34,46 @@ os.chdir(r"C:\Users\Administrateur\Documents\GitHub\Python\POO\TP8\EX1")
 df=pd.read_csv("etudiants.csv")
 print(df)
 
+#Q2
 print(df.head(3))
-
 print(df["nom"])
-print(df[["nom", "note"]])
+print(df[["nom","note"]])
+print("-----------------------------")
 
-df["admis"] = df["note"] >= 10
+#Q3
+df["admis"]=df["note"]>=10
 print(df)
+print("-----------------------------")
 
-df.loc[df["nom"] == "Omar", "note"] = 12
+#Q4
+df.loc[df["nom"]=="Omar","note"]=12
 print(df)
+print("-----------------------------")
 
-df_sorted = df.sort_values(by="note", ascending=False)
-print(df_sorted)
+#Q5
+df=df.sort_values(by="note",ascending=False)
+print(df)
+print("-----------------------------")
 
-moyenne = df["note"].mean()
-note_max = df["note"].max()
+#Q6
+moyenne=df["note"].mean()
+note_max=df["note"].max()
+note_min=df["note"].min()
+print("Moyenne:",moyenne)
+print("Note maximale:",note_max)
+print("Note minimale:",note_min)
+print("-----------------------------")
 
-note_min = df["note"].min()
-print(f"Moyenne: {moyenne}, Note maximale: {note_max}, Note minimale: {note_min}")
-df.to_csv("resultat.csv", index=False)
+#Q7
+df.to_csv("resultat.csv",index=False)
+print("-----------------------------")
 
+#Q8
 def rechercher_etudiant(df, nom):
-    etudiant = df[df["nom"] == nom]
+    etudiant=df[df["nom"]==nom]
     if not etudiant.empty:
-        print(f"Note de {nom}: {etudiant['note'].values[0]}")
+        print(f"Note de {nom}:",etudiant["note"].values[0])
     else:
         print("Étudiant introuvable")
-rechercher_etudiant(df, "Sara")
-rechercher_etudiant(df, "Youssef")
+rechercher_etudiant(df,"Sara")
+rechercher_etudiant(df,"Achraf")
