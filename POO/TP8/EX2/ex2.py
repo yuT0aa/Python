@@ -30,3 +30,5 @@ for l in f.readlines():
         print("le gagnant est",g2)
     else:
         print("egalite")
+
+#Q3
