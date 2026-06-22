@@ -35,3 +35,31 @@ df=pd.read_csv("etudiants.csv")
 print(df)
 
 print(df.head(3))
+
+print(df["nom"])
+print(df[["nom", "note"]])
+
+df["admis"] = df["note"] >= 10
+print(df)
+
+df.loc[df["nom"] == "Omar", "note"] = 12
+print(df)
+
+df_sorted = df.sort_values(by="note", ascending=False)
+print(df_sorted)
+
+moyenne = df["note"].mean()
+note_max = df["note"].max()
+
+note_min = df["note"].min()
+print(f"Moyenne: {moyenne}, Note maximale: {note_max}, Note minimale: {note_min}")
+df.to_csv("resultat.csv", index=False)
+
+def rechercher_etudiant(df, nom):
+    etudiant = df[df["nom"] == nom]
+    if not etudiant.empty:
+        print(f"Note de {nom}: {etudiant['note'].values[0]}")
+    else:
+        print("Étudiant introuvable")
+rechercher_etudiant(df, "Sara")
+rechercher_etudiant(df, "Youssef")
