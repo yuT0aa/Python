@@ -1,0 +1,29 @@
+#1
+L=[10,20,30,40,50]
+L[1:4]=[100,200]
+print(L)
+
+--->[10, 100, 200, 50]
+
+#2
+Un programme doit permettre de retrouver instantanément la note d'un étudiant à
+partir de son matricule. Entre une liste et un dictionnaire, quelle structure choisiriez-
+vous ? Pourquoi ?
+
+--->dictionnaire, car on a cle et valeur
+
+#3
+On dispose des ensembles :
+A={"Python","Java","C++"}
+B = {"Python", "JavaScript", "C++"}
+Quelle opération permet de trouver uniquement les langages présents dans les deux
+ensembles ? Donnez le résultat.
+
+--->print(A & B)
+
+#4
+Vous devez sauvegarder un dictionnaire Python contenant plusieurs listes afin de le
+récupérer plus tard exactement sous la même forme. Quel module choisiriez-vous
+entre : json, os, pickle, pandas.
+
+--->pickle
