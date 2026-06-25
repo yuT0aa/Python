@@ -32,3 +32,4 @@ for l in f.readlines():
         print("egalite")
 
 #Q3
+
