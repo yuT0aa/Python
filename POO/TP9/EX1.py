@@ -1,6 +1,6 @@
 """
 Soit le texte :
-texte = '''
+texte='''
 Ali a 22 ans.
 Sara a 19 ans.
 Omar a 31 ans.
@@ -12,7 +12,7 @@ Yasmine a 25 ans.
 4. Extraire tous les mots commençant par une majuscule.
 5. Compter le nombre total de prénoms trouvés.
 """
-texte = '''
+texte='''
 Ali a 22 ans.
 Sara a 19 ans.
 Omar a 31 ans.
